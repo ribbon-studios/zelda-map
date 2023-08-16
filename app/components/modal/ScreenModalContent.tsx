@@ -36,7 +36,7 @@ export function ScreenModalContent({ map }: ScreenModalContentProps) {
         const x = index % TILE_WIDTH;
         const y = Math.floor(index / TILE_HEIGHT);
 
-        return <Tile x={x} y={Math.floor(y)} disabled={!screen} />;
+        return <Tile key={index} x={x} y={Math.floor(y)} disabled={!screen} />;
       });
   }, []);
 

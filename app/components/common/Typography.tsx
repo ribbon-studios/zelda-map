@@ -1,7 +1,7 @@
 import type { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 import { useReadOnlyCachedState } from '@rain-cafe/react-utils';
 import classnames from 'classnames';
-import styles from './Typography.module.scss';
+import * as styles from './Typography.module.scss';
 
 export const TypographyDefaultElement = 'h2';
 

@@ -14,7 +14,7 @@ export function Map({ map }: MapProps) {
 
   return (
     <div className={styles.map}>
-      <img src={image} />
+      <img alt="map" src={image} />
 
       <Overlay />
     </div>

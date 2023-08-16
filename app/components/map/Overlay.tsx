@@ -24,7 +24,9 @@ export function Overlay() {
       .map((_, index) => {
         const x = index % SCREEN_WIDTH;
         const y = Math.floor(index / SCREEN_WIDTH);
-        return <Screen x={x} y={Math.floor(y)} visible={containsCoordinates(x, y, DEFAULT_VISIBLE_SCREENS)} />;
+        return (
+          <Screen key={index} x={x} y={Math.floor(y)} visible={containsCoordinates(x, y, DEFAULT_VISIBLE_SCREENS)} />
+        );
       });
   }, []);
 
