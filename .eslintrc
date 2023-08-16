@@ -11,5 +11,5 @@
     "@typescript-eslint/no-explicit-any": "off",
     "unused-imports/no-unused-imports-ts": "error"
   },
-  "ignorePatterns": ["**/node_modules/", "**/dist/"]
+  "ignorePatterns": ["**/node_modules/", "**/dist/", "*.d.ts"]
 }

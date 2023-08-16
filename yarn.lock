@@ -1788,6 +1788,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rain-cafe/fork-me@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@rain-cafe/fork-me@npm:1.0.0"
+  peerDependencies:
+    react: "*"
+  checksum: a7bd7d14c5b9f5dc5d8f58c8e4a4ef44021b8484b4b9246d05b6588cd61b22d9e117cde60579e912c70636cb33a86abf457864f5bb1904c9299ff07944eb087a
+  languageName: node
+  linkType: hard
+
 "@rain-cafe/react-utils@npm:^1.0.3":
   version: 1.0.3
   resolution: "@rain-cafe/react-utils@npm:1.0.3"
@@ -7008,6 +7017,7 @@ __metadata:
   resolution: "zelda-map@workspace:."
   dependencies:
     "@parcel/transformer-sass": 2.9.3
+    "@rain-cafe/fork-me": ^1.0.0
     "@rain-cafe/react-utils": ^1.0.3
     "@reduxjs/toolkit": ^1.9.5
     "@types/jest": ^29.5.3
