@@ -1310,6 +1310,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/packager-raw-url@npm:2.9.3":
+  version: 2.9.3
+  resolution: "@parcel/packager-raw-url@npm:2.9.3"
+  dependencies:
+    "@parcel/plugin": 2.9.3
+    "@parcel/utils": 2.9.3
+  checksum: 2c651f2857124c8b12eba3c68ae897e5cb8bc204b3ad286e9e3b46edd1dc75c6e8346c89e0473edfc316d3349884ae7fdd5b5029e4a508e43a2432af97285df7
+  languageName: node
+  linkType: hard
+
 "@parcel/packager-raw@npm:2.9.3":
   version: 2.9.3
   resolution: "@parcel/packager-raw@npm:2.9.3"
@@ -1617,6 +1627,18 @@ __metadata:
     posthtml-render: ^3.0.0
     semver: ^7.5.2
   checksum: 19cec37f9cfb4a5506e48e41d70e970584cd06a913dfc92d128031991ff6615ce3302a896c2766fa64be8c8f56f81da47ece05e7b65c30f7e5213e676cae346c
+  languageName: node
+  linkType: hard
+
+"@parcel/transformer-webmanifest@npm:2.9.3":
+  version: 2.9.3
+  resolution: "@parcel/transformer-webmanifest@npm:2.9.3"
+  dependencies:
+    "@mischnic/json-sourcemap": ^0.1.0
+    "@parcel/diagnostic": 2.9.3
+    "@parcel/plugin": 2.9.3
+    "@parcel/utils": 2.9.3
+  checksum: 1c94701fd41e3f6aa831001a247556f33464e45a1782c39fa5de18afbe7944b34a15aa194e5c527c37c8acfc66cf67c89cef8cae634669cbab726449adbb98c4
   languageName: node
   linkType: hard
 
@@ -7016,7 +7038,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zelda-map@workspace:."
   dependencies:
+    "@parcel/packager-raw-url": 2.9.3
     "@parcel/transformer-sass": 2.9.3
+    "@parcel/transformer-webmanifest": 2.9.3
     "@rain-cafe/fork-me": ^1.0.0
     "@rain-cafe/react-utils": ^1.0.3
     "@reduxjs/toolkit": ^1.9.5
