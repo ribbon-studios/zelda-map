@@ -21,5 +21,5 @@ export const BANNERS: Record<Environment, Banner | null> = {
   [Environment.LIVE]: null,
 };
 
-export const environment = ENVIRONMENT_DOMAIN_MAP[location.origin] || Environment.LOCAL;
+export const environment = ENVIRONMENT_DOMAIN_MAP[location.hostname] || Environment.LOCAL;
 export const banner = BANNERS[environment];
