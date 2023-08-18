@@ -5,7 +5,7 @@ import { Sprites } from '../../constants/sprites';
 export type Tile = {
   x: number;
   y: number;
-  sprite: Sprites;
+  sprite?: Sprites;
 };
 export type TileState = Record<string, Tile>;
 

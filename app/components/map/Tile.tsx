@@ -28,7 +28,7 @@ export function Tile({ x, y, disabled }: TileProps) {
           setTile({
             x,
             y,
-            sprite: Sprites.OCTOROK,
+            sprite: tile?.sprite === undefined ? Sprites.OCTOROK : undefined,
           })
         );
       }}

@@ -14,6 +14,8 @@ export function Sprite({ sprite }: SpriteProps) {
     return [SPRITES_TO_SHEET[sprite], ...SPRITE_TO_COORD_MAP[sprite]];
   }, [sprite]);
 
+  if (sprite === undefined) return null;
+
   return (
     <div
       className={styles.sprite}

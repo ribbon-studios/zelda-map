@@ -31,12 +31,12 @@ export function ScreenModalContent({ map }: ScreenModalContentProps) {
     return Array(TILE_WIDTH * TILE_HEIGHT)
       .fill(null)
       .map((_, index) => {
-        const x = index % TILE_WIDTH;
-        const y = Math.floor(index / TILE_HEIGHT);
+        const x = (index % TILE_WIDTH) + screen.x * TILE_WIDTH;
+        const y = Math.floor(index / TILE_HEIGHT) + screen.y * TILE_WIDTH;
 
         return <Tile key={index} x={x} y={Math.floor(y)} />;
       });
-  }, []);
+  }, [screen]);
 
   return (
     <div className={classNames(styles.slider, screen && styles.visible)}>
