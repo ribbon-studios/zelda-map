@@ -32,7 +32,13 @@ export function Screen({ x, y, visible: externallyVisible }: ScreenProps) {
           })
         )
       }
-      onDoubleClick={() => setVisible(!visible)}
+      onContextMenu={(event) => {
+        event.preventDefault();
+
+        if (screenLocked) return;
+
+        setVisible(!visible);
+      }}
       onMouseOver={() => {
         if (!visible || anyScreenLocked) return;
 
