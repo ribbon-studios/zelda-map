@@ -14,3 +14,5 @@
   [![Coveralls](https://img.shields.io/coveralls/github/rain-cafe/zelda-map)](https://coveralls.io/github/rain-cafe/zelda-map)
   
 </div>
+
+_**Credit to [Nintendo](https://nintendo.com) for the original art and [MisterMike](https://www.spriters-resource.com/submitter/MisterMike/) for the rips!~**_ :heart:

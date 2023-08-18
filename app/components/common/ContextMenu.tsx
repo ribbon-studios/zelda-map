@@ -31,27 +31,28 @@ export function ContextMenu({ opened: externallyOpened = false, target }: Contex
   }, [target]);
 
   useEffect(() => {
+    if (!opened) return;
+
     const listener = (event: MouseEvent) => {
       if (event.composedPath().includes(ref.current as any)) return;
 
       setOpened(false);
     };
 
-    document.addEventListener('click', listener, {
-      passive: true,
-    });
+    // Wait for the next frame to prevent this from instantly triggering
+    requestAnimationFrame(() => {
+      document.addEventListener('click', listener, {
+        passive: true,
+      });
 
-    if (opened) {
       document.addEventListener('contextmenu', listener, {
         passive: true,
       });
-    }
+    });
 
     return () => {
       document.removeEventListener('click', listener);
-      if (opened) {
-        document.removeEventListener('contextmenu', listener);
-      }
+      document.removeEventListener('contextmenu', listener);
     };
   }, [ref, opened]);
 
