@@ -1828,6 +1828,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rain-cafe/ribbon@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@rain-cafe/ribbon@npm:1.0.2"
+  dependencies:
+    "@rain-cafe/react-utils": ^1.0.3
+  peerDependencies:
+    react: "*"
+  checksum: 93eb1ae92312f1f3e0a60b51c1888a82e4caf929966a858a5dee13d79b52297e3b3edef95ac4b9324154642bf2343b86020d38d7cdabfa5851a0c9a1c5f32a88
+  languageName: node
+  linkType: hard
+
 "@reduxjs/toolkit@npm:^1.9.5":
   version: 1.9.5
   resolution: "@reduxjs/toolkit@npm:1.9.5"
@@ -7052,6 +7063,7 @@ __metadata:
     "@parcel/transformer-webmanifest": 2.9.3
     "@rain-cafe/fork-me": ^1.0.0
     "@rain-cafe/react-utils": ^1.0.3
+    "@rain-cafe/ribbon": ^1.0.2
     "@reduxjs/toolkit": ^1.9.5
     "@types/jest": ^29.5.3
     "@types/react": ^18.2.20
