@@ -20,8 +20,6 @@ export function ScreenModalContent({ map }: ScreenModalContentProps) {
   const screen = useSelector(selectScreen);
   const image = useReadOnlyCachedState(() => MAP_IMAGES[map], [map]);
   const computedStyles = useReadOnlyCachedState<React.CSSProperties | undefined>(() => {
-    if (!screen) return undefined;
-
     return {
       backgroundImage: `url(${image})`,
       backgroundPositionX: `${screen.x * -SCREEN_WIDTH}px`,
@@ -36,7 +34,7 @@ export function ScreenModalContent({ map }: ScreenModalContentProps) {
         const x = index % TILE_WIDTH;
         const y = Math.floor(index / TILE_HEIGHT);
 
-        return <Tile key={index} x={x} y={Math.floor(y)} disabled={!screen} />;
+        return <Tile key={index} x={x} y={Math.floor(y)} />;
       });
   }, []);
 

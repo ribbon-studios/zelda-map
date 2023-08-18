@@ -1,6 +1,6 @@
 .app {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 2fr 3fr;
   // flex-direction: column;
   max-height: 100vh;
 }

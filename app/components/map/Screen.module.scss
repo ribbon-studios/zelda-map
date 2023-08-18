@@ -30,11 +30,47 @@
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.25);
+    transition: 0.15s ease-in-out;
+    transition-property: opacity background-color;
 
     opacity: 0;
   }
 
   &:hover:after {
     opacity: 1;
+  }
+
+  .lockOverlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.15s ease-in-out;
+    transition-property: opacity;
+
+    opacity: 0;
+  }
+
+  &.locked {
+    &:after {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .lockOverlay {
+      opacity: 1;
+    }
+  }
+
+  .lock {
+    aspect-ratio: 1/1;
+    height: 50%;
+    width: 50%;
   }
 }
