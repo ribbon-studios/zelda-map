@@ -18,7 +18,11 @@ export function Screen({ screen }: ScreenProps) {
   return (
     <div
       className={classNames(styles.screen, screen.visible && styles.visible, screenLocked && styles.locked)}
-      onClick={() => dispatch(toggleScreenLock(screen))}
+      onClick={() => {
+        if (!screen.visible) return;
+
+        dispatch(toggleScreenLock(screen));
+      }}
       onContextMenu={(event) => {
         event.preventDefault();
 
