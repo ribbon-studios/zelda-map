@@ -3159,7 +3159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dedent@npm:^1.0.0":
+"dedent@npm:^1.0.0, dedent@npm:^1.5.1":
   version: 1.5.1
   resolution: "dedent@npm:1.5.1"
   peerDependencies:
@@ -7098,6 +7098,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.4.0
     "@typescript-eslint/parser": ^6.4.0
     classnames: ^2.3.2
+    dedent: ^1.5.1
     dexie: ^3.2.4
     eslint: ^8.47.0
     eslint-plugin-unused-imports: ^3.0.0
