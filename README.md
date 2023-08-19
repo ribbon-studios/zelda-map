@@ -15,4 +15,8 @@
   
 </div>
 
+<div align="center">
+
 _**Credit to [Nintendo](https://nintendo.com) for the original art and [MisterMike](https://www.spriters-resource.com/submitter/MisterMike/) for the rips!~**_ :heart:
+
+</div>
