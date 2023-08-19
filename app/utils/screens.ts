@@ -1,3 +1,5 @@
+import { Screens } from '../constants/map';
+
 export function containsCoordinates(x: number, y: number, coordPairs: string[]): boolean {
   return coordPairs.includes(`${x},${y}`);
 }
@@ -36,4 +38,12 @@ export function explodeCoordPairs(...rawCoordPairs: string[]): string[] {
 
     return coordPairs;
   }, []);
+}
+
+export function screenCoordToIndex(x: number, y: number): number {
+  return x + y * Screens.COLUMNS;
+}
+
+export function indexToScreenCoord(index: number): [number, number] {
+  return [index % Screens.COLUMNS, Math.floor(index / Screens.COLUMNS)];
 }

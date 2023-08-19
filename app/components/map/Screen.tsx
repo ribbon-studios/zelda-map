@@ -1,61 +1,43 @@
 import classNames from 'classnames';
 import * as styles from './Screen.module.scss';
-import { useCachedState } from '@rain-cafe/react-utils';
 import { useAppDispatch } from '../../store/store';
-import { isAnyScreenLocked, isScreenLocked, setScreen, toggleScreenLock } from '../../store/slices/screen.slice';
-import { useSelector } from 'react-redux';
+import { Screen, toggleScreenVisibility } from '../../store/slices/screens.slice';
 import { FaLock } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { isAnyScreenLocked, isScreenLocked, setActiveScreen, toggleScreenLock } from '../../store/slices/screen.slice';
 
 export type ScreenProps = {
-  x: number;
-  y: number;
-  visible: boolean;
+  screen: Screen;
 };
 
-export const TILE_WIDTH = 16;
-export const TILE_HEIGHT = 11;
-
-export function Screen({ x, y, visible: externallyVisible }: ScreenProps) {
+export function Screen({ screen }: ScreenProps) {
   const dispatch = useAppDispatch();
   const anyScreenLocked = useSelector(isAnyScreenLocked);
-  const screenLocked = useSelector(isScreenLocked(x, y));
-  const [visible, setVisible] = useCachedState(() => externallyVisible, [externallyVisible]);
+  const screenLocked = useSelector(isScreenLocked(screen));
 
   return (
     <div
-      className={classNames(styles.screen, visible && styles.visible, screenLocked && styles.locked)}
-      onClick={() =>
-        dispatch(
-          toggleScreenLock({
-            x,
-            y,
-          })
-        )
-      }
+      className={classNames(styles.screen, screen.visible && styles.visible, screenLocked && styles.locked)}
+      onClick={() => dispatch(toggleScreenLock(screen))}
       onContextMenu={(event) => {
         event.preventDefault();
 
         if (screenLocked) return;
 
-        setVisible(!visible);
+        dispatch(toggleScreenVisibility(screen));
       }}
       onMouseOver={() => {
-        if (!visible || anyScreenLocked) return;
+        if (!screen.visible || anyScreenLocked) return;
 
-        dispatch(
-          setScreen({
-            x,
-            y,
-          })
-        );
+        dispatch(setActiveScreen(screen));
       }}
     >
       <div className={styles.lockOverlay}>
         <FaLock className={styles.lock} />
       </div>
-      {!visible && (
+      {!screen.visible && (
         <div className={styles.coords}>
-          {x}, {y}
+          {screen.x}, {screen.y}
         </div>
       )}
     </div>

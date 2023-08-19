@@ -1,55 +1,61 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store';
+import { Screen } from './screens.slice';
 
-export type ScreenState = {
+export type ActiveScreen = {
   x: number;
   y: number;
   locked: boolean;
 };
 
-const screenSlice = createSlice({
-  initialState: {
-    x: 7,
-    y: 7,
-    locked: false,
-  } as ScreenState,
-  name: 'screen',
+const initialState: ActiveScreen = {
+  x: 7,
+  y: 7,
+  locked: true,
+};
+
+const activeScreenSlice = createSlice({
+  initialState,
+  name: 'activeScreen',
   reducers: {
-    toggleScreenLock(state, action: PayloadAction<Omit<ScreenState, 'locked'>>) {
-      if (action.payload.x !== state.x || action.payload.y !== state.y) {
+    toggleScreenLock(state, { payload: screen }: PayloadAction<Screen>) {
+      if (state.x === screen.x && state.y === screen.y) {
         return {
-          ...action.payload,
-          locked: true,
+          ...state,
+          locked: !state.locked,
         };
       }
 
       return {
-        ...state,
-        locked: !state?.locked,
+        ...screen,
+        locked: true,
       };
     },
-    setScreen(state, action: PayloadAction<Omit<ScreenState, 'locked'>>) {
+    setActiveScreen(state, { payload: screen }: PayloadAction<Screen>) {
       return {
-        ...action.payload,
+        x: screen.x,
+        y: screen.y,
         locked: false,
       };
     },
   },
 });
 
-export const { setScreen, toggleScreenLock } = screenSlice.actions;
-export const screenReducer = screenSlice.reducer;
+export const { setActiveScreen, toggleScreenLock } = activeScreenSlice.actions;
+export const activeScreenReducer = activeScreenSlice.reducer;
 
-export const selectScreen = (state: RootState): ScreenState => {
-  return state.screen ?? null;
+export const selectActiveScreen = (state: RootState): ActiveScreen => {
+  return state.activeScreen;
+};
+
+export const isAnyScreenLocked = (state: RootState): boolean => {
+  return selectActiveScreen(state).locked;
 };
 
 export const isScreenLocked =
-  (x: number, y: number) =>
+  (screen: Screen) =>
   (state: RootState): boolean => {
-    return state.screen.x === x && state.screen.y === y && state.screen.locked;
-  };
+    const selectedScreen = selectActiveScreen(state);
 
-export const isAnyScreenLocked = (state: RootState): boolean => {
-  return state.screen.locked;
-};
+    return selectedScreen.locked && selectedScreen.x === screen.x && selectedScreen.y === screen.y;
+  };

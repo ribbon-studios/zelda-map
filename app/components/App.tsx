@@ -1,21 +1,28 @@
 import { Maps } from '../constants/maps';
 import { Map } from './map/Map';
 import * as styles from './App.module.scss';
-import { Provider } from 'react-redux';
-import { store } from '../store/store';
-import { ScreenModalContent } from './modal/ScreenModalContent';
+import { useAppDispatch } from '../store/store';
 import { Header } from './Header';
 import { ForkMe } from '@rain-cafe/fork-me';
+import { FocusedScreen } from './map/FocusedScreen';
+import { useEffect } from 'react';
+import { initializeScreens } from '../store/thunks/screens.thunks';
 
 export function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(initializeScreens());
+  }, []);
+
   return (
-    <Provider store={store}>
+    <>
       <div className={styles.app}>
         <Header />
-        <ScreenModalContent map={Maps.QUEST1} />
+        <FocusedScreen map={Maps.QUEST1} />
         <Map map={Maps.QUEST1} />
       </div>
       <ForkMe slug="rain-cafe/zelda-map" backgroundColor="white" color="#272727" />
-    </Provider>
+    </>
   );
 }

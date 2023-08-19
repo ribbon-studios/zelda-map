@@ -6,7 +6,6 @@ export type SpriteProps = {
   sprite?: Sprites;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function Sprite({ sprite }: SpriteProps) {
   const [sheet, x, y] = useReadOnlyCachedState(() => {
     if (sprite === undefined) return [];

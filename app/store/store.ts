@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { screenReducer } from './slices/screen.slice';
-import { tileReducer } from './slices/tile.slice';
+import { screensReducer } from './slices/screens.slice';
+import { activeScreenReducer } from './slices/screen.slice';
 
 export const store = configureStore({
   reducer: {
-    tiles: tileReducer,
-    screen: screenReducer,
+    activeScreen: activeScreenReducer,
+    screens: screensReducer,
   },
 });
 
