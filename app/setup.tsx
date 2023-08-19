@@ -8,3 +8,5 @@ createRoot(document.getElementById('root') as HTMLElement).render(
     <App />
   </Provider>
 );
+
+console.log(`You're currently running v${process.env.GITHUB_SHA || 'local'}!`);
