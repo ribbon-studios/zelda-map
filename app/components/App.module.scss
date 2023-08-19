@@ -1,5 +1,6 @@
 .app {
   display: grid;
   grid-template-rows: auto 2fr 3fr;
-  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }

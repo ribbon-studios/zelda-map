@@ -6,6 +6,7 @@ import { selectActiveScreen } from '../../store/slices/screen.slice';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import { selectScreen } from '../../store/slices/screens.slice';
+import { Screens } from '../../constants/map';
 
 export type FocusedScreenProps = {
   map: Maps;
@@ -26,8 +27,8 @@ export function FocusedScreen({ map }: FocusedScreenProps) {
 
     return {
       backgroundImage: `url(${image})`,
-      backgroundPositionX: `${screen.x * -SCREEN_WIDTH}px`,
-      backgroundPositionY: `${screen.y * -SCREEN_HEIGHT}px`,
+      backgroundPositionX: `${(screen.x / (Screens.COLUMNS - 1)) * 100}%`,
+      backgroundPositionY: `${(screen.y / (Screens.ROWS - 1)) * 100}%`,
     };
   }, [image, screen]);
 
