@@ -1,4 +1,4 @@
-import { Ribbon } from '@rain-cafe/ribbon';
+import { Ribbon } from '@ribbon-studios/ribbon';
 import { Typography } from './common/Typography';
 import * as styles from './Header.module.scss';
 import { banner } from '../config';

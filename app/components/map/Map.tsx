@@ -1,7 +1,7 @@
-import { useReadOnlyCachedState } from '@rain-cafe/react-utils';
 import { MAP_IMAGES, Maps } from '../../constants/maps';
 import * as styles from './Map.module.scss';
 import { Overlay } from './Overlay';
+import { useMemo } from 'react';
 
 export type MapProps = {
   map: Maps;
@@ -10,7 +10,7 @@ export type MapProps = {
 export const SCALE = 3;
 
 export function Map({ map }: MapProps) {
-  const image = useReadOnlyCachedState(() => MAP_IMAGES[map], [map]);
+  const image = useMemo(() => MAP_IMAGES[map], [map]);
 
   return (
     <div className={styles.map}>

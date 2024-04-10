@@ -9,10 +9,10 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@rain-cafe/fork-me": "^1.0.0",
-    "@rain-cafe/logger": "^1.0.4",
-    "@rain-cafe/react-utils": "^1.0.3",
-    "@rain-cafe/ribbon": "^1.0.2",
+    "@ribbon-studios/fork-me": "^1.0.1",
+    "@ribbon-studios/logger": "^2.0.2",
+    "@ribbon-studios/react-utils": "^2.3.3",
+    "@ribbon-studios/ribbon": "^1.0.2",
     "@reduxjs/toolkit": "^1.9.5",
     "classnames": "^2.3.2",
     "dedent": "^1.5.1",
@@ -24,9 +24,9 @@
     "react-redux": "^8.1.2"
   },
   "devDependencies": {
-    "@parcel/packager-raw-url": "2.9.3",
-    "@parcel/transformer-sass": "2.9.3",
-    "@parcel/transformer-webmanifest": "2.9.3",
+    "@parcel/packager-raw-url": "^2.12.0",
+    "@parcel/transformer-sass": "^2.12.0",
+    "@parcel/transformer-webmanifest": "^2.12.0",
     "@types/jest": "^29.5.3",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",

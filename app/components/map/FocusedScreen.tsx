@@ -1,12 +1,12 @@
 import * as styles from './FocusedScreen.module.scss';
 import { MAP_IMAGES, Maps } from '../../constants/maps';
-import { useReadOnlyCachedState } from '@rain-cafe/react-utils';
 import { Tile } from './Tile';
 import { selectActiveScreen } from '../../store/slices/screen.slice';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import { selectScreen } from '../../store/slices/screens.slice';
 import { Screens } from '../../constants/map';
+import { useMemo } from 'react';
 
 export type FocusedScreenProps = {
   map: Maps;
@@ -21,8 +21,8 @@ export const TILE_HEIGHT = 11;
 export function FocusedScreen({ map }: FocusedScreenProps) {
   const activeScreen = useSelector(selectActiveScreen);
   const screen = useSelector(selectScreen(activeScreen.x, activeScreen.y));
-  const image = useReadOnlyCachedState(() => MAP_IMAGES[map], [map]);
-  const computedStyles = useReadOnlyCachedState<React.CSSProperties | undefined>(() => {
+  const image = useMemo(() => MAP_IMAGES[map], [map]);
+  const computedStyles = useMemo<React.CSSProperties | undefined>(() => {
     if (!screen) return undefined;
 
     return {
