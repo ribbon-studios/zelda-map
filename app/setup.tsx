@@ -14,6 +14,6 @@ const sha = process.env.GITHUB_SHA || 'main';
 if (sha) {
   console.log(dedent`
     Version: ${sha}
-    URL: https://github.com/rain-cafe/zelda-map/tree/${sha}
+    URL: https://github.com/ribbon-studios/zelda-map/tree/${sha}
   `);
 }

@@ -22,7 +22,7 @@ export function App() {
         <FocusedScreen map={Maps.QUEST1} />
         <Map map={Maps.QUEST1} />
       </div>
-      <ForkMe slug="rain-cafe/zelda-map" backgroundColor="white" color="#272727" />
+      <ForkMe slug="ribbon-studios/zelda-map" backgroundColor="white" color="#272727" />
     </>
   );
 }
