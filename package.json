@@ -1,6 +1,7 @@
 {
   "name": "zelda-map",
   "scripts": {
+    "ci": "bun install --frozen-lockfile",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "lint": "eslint . --ext .js,.mjs,.ts,.tsx",
