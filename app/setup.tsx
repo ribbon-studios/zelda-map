@@ -10,7 +10,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
   </Provider>
 );
 
-const sha = process.env.GITHUB_SHA || 'main';
+const sha = process.env.GITHUB_SHA;
 if (sha) {
   console.log(dedent`
     Version: ${sha}

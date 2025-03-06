@@ -3,13 +3,13 @@ import * as styles from './Tile.module.scss';
 import { ContextMenu } from '../common/ContextMenu';
 import { useRef } from 'react';
 import { Sprite } from './Sprite';
-import { Tile, updateTileSprite } from '../../store/slices/screens.slice';
-import { ActiveScreen } from '../../store/slices/screen.slice';
+import { type Tile as TileSlice, updateTileSprite } from '../../store/slices/screens.slice';
+import type { ActiveScreen } from '../../store/slices/screen.slice';
 import { useAppDispatch } from '../../store/store';
 
 export type TileProps = {
   screen: ActiveScreen;
-  tile: Tile;
+  tile: TileSlice;
   disabled?: boolean;
 };
 

@@ -4,7 +4,7 @@ export enum Environment {
 }
 
 export const ENVIRONMENT_DOMAIN_MAP: Record<string, Environment> = {
-  'zelda.rains.cafe': Environment.LIVE,
+  'zelda.ribbonstudios.com': Environment.LIVE,
 };
 
 export type Banner = {

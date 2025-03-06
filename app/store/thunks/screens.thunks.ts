@@ -3,7 +3,7 @@ import { ScreensRepo } from '../../components/db/screens';
 import { Screens, Tiles } from '../../constants/map';
 import { containsCoordinates, indexToScreenCoord } from '../../utils/screens';
 import { indexToTileCoord } from '../../utils/tiles';
-import { DEFAULT_VISIBLE_SCREENS, Screen, Tile } from '../slices/screens.slice';
+import { DEFAULT_VISIBLE_SCREENS, type Screen, type Tile } from '../slices/screens.slice';
 
 export const initializeScreens = createAsyncThunk('screens/init', async () => {
   try {

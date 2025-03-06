@@ -1,10 +1,10 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { RootState } from '../store';
 import { Sprites } from '../../constants/sprites';
 import { explodeCoordPairs, screenCoordToIndex } from '../../utils/screens';
 import { ScreensRepo } from '../../components/db/screens';
 import { initializeScreens } from '../thunks/screens.thunks';
-import { ActiveScreen } from './screen.slice';
+import type { ActiveScreen } from './screen.slice';
 import { tileCoordToIndex } from '../../utils/tiles';
 import { TilesRepo } from '../../components/db/tiles';
 

@@ -1,4 +1,4 @@
-import { Screen, Tile } from '../../store/slices/screens.slice';
+import { type Screen, type Tile } from '../../store/slices/screens.slice';
 import { db } from './core';
 
 export class TilesRepo {

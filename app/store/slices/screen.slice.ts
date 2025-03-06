@@ -1,6 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { Screen } from './screens.slice';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { RootState } from '../store';
+import type { Screen } from './screens.slice';
 
 export type ActiveScreen = {
   x: number;

@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import * as styles from './Screen.module.scss';
 import { useAppDispatch } from '../../store/store';
-import { Screen, toggleScreenVisibility } from '../../store/slices/screens.slice';
+import { type Screen as ScreenSlice, toggleScreenVisibility } from '../../store/slices/screens.slice';
 import { FaLock } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { isAnyScreenLocked, isScreenLocked, setActiveScreen, toggleScreenLock } from '../../store/slices/screen.slice';
 
 export type ScreenProps = {
-  screen: Screen;
+  screen: ScreenSlice;
 };
 
 export function Screen({ screen }: ScreenProps) {

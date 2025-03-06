@@ -1,5 +1,5 @@
 import { db } from './core';
-import { Screen } from '../../store/slices/screens.slice';
+import type { Screen } from '../../store/slices/screens.slice';
 
 export class ScreensRepo {
   static async getScreens(): Promise<Screen[]> {

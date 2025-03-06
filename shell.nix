@@ -9,7 +9,7 @@
       nixpkgs-fmt
       nixd
       bun
-      nodejs_20
+      nodejs_22
     ];
   };
 }

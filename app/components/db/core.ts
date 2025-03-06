@@ -1,16 +1,10 @@
-import Dexie, { Table } from 'dexie';
-import { Screen } from '../../store/slices/screens.slice';
+import Dexie, { type EntityTable } from 'dexie';
+import type { Screen } from '../../store/slices/screens.slice';
 
-export class Zexie extends Dexie {
-  screens!: Table<Screen>;
+export const db = new Dexie('zelda-map') as Dexie & {
+  screens: EntityTable<Screen>;
+};
 
-  constructor() {
-    super('zelda-map');
-
-    this.version(1).stores({
-      screens: '[y+x], x',
-    });
-  }
-}
-
-export const db = new Zexie();
+db.version(1).stores({
+  screens: '[y+x], x',
+});
