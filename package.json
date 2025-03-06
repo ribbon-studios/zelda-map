@@ -13,7 +13,7 @@
     "@ribbon-studios/fork-me": "^1.1.5",
     "@ribbon-studios/logger": "^2.0.2",
     "@ribbon-studios/react-utils": "^3.0.1",
-    "@ribbon-studios/ribbon": "^1.0.4",
+    "@ribbon-studios/ribbon": "^1.0.5",
     "@reduxjs/toolkit": "^2.6.0",
     "classnames": "^2.5.1",
     "dedent": "^1.5.3",
