@@ -90,7 +90,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://zelda.rains.cafe
+      url: https://zelda.ribbonstudios.com
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

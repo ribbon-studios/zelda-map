@@ -3,10 +3,12 @@ import Sitemap from 'vite-plugin-sitemap';
 import path from 'path';
 import { defineConfig } from 'vitest/config';
 
+console.log(process.env.GITHUB_SHA);
+
 // https://vitejs.dev/config/
 export default defineConfig({
   define: {
-    'process.env.GITHUB_SHA': process.env.GITHUB_SHA || '"main"',
+    'process.env.GITHUB_SHA': `'${process.env.GITHUB_SHA ?? 'main'}'`,
   },
   build: {
     target: 'esnext',
